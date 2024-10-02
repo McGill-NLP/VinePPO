@@ -1,5 +1,5 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
-> Amirhossein Kazemnejad, Milad Aghajohari, Eva Portelance, Alessandro Sordoni, Siva Reddy, Aaron Courville, Nicolas Le Roux
+> Amirhossein Kazemnejad*, Milad Aghajohari*, Eva Portelance, Alessandro Sordoni, Siva Reddy, Aaron Courville, Nicolas Le Roux
 - [Paper](#paper)
 - [Abstract](#abstract)
 - [Updates](#updates)
