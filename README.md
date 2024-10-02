@@ -1,4 +1,5 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
+> Amirhossein Kazemnejad, Milad Aghajohari, Eva Portelance, Alessandro Sordoni, Siva Reddy, Aaron Courville, Nicolas Le Roux
 - [Paper](#paper)
 - [Abstract](#abstract)
 - [Updates](#updates)
@@ -13,8 +14,13 @@
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
 
+Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation of popular baselines RL and RL-free methods (such as PPO, DPO, and RestEM) for LLM reasoning.
 
-![VinePPO](assets/method_showcase.png)
+<br>
+<p align="center">
+    <img src="assets/results.png" width="70%" />
+</p>
+
 
 ## Paper 
 TBD
