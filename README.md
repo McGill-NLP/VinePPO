@@ -14,11 +14,10 @@
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
 
-Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation of popular baselines RL and RL-free methods (such as PPO, DPO, and RestEM) for LLM reasoning.
+Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
 
-<br>
 <p align="center">
-    <img src="assets/results.png" width="70%" />
+    <img src="assets/results.png" width="80%" />
 </p>
 
 
