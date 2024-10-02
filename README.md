@@ -1,16 +1,14 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
-- [VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment](#vineppo-unlocking-rl-potential-for-reasoning-through-refined-credit-assignment)
-  - [Paper](#paper)
-  - [Abstract](#abstract)
-  - [Updates](#updates)
-  - [Quick Start](#quick-start)
-    - [Installation](#installation)
-    - [Download the datasets](#download-the-datasets)
-    - [Create Experiment Script](#create-experiment-script)
-    - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
-    - [Running the experiments](#running-the-experiments)
-  - [Code Structure](#code-structure)
-  - [Citation](#citation)
+- [Paper](#paper)
+- [Abstract](#abstract)
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [Download the datasets](#download-the-datasets)
+  - [Create Experiment Script](#create-experiment-script)
+  - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
+  - [Running the experiments](#running-the-experiments)
+- [Code Structure](#code-structure)
+- [Citation](#citation)
 
 ## Paper 
 TBD
@@ -145,7 +143,7 @@ singularity exec --nv \
     - [`models`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/models): Contains model loading, with [`pretrained.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/models/pretrained.py) the central piece to load HF models.
     - [`episode_generators`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators): Manages the episode generation pipelines. The [`math_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator.py) script is key for PPO episode generation and [`math_episode_generator_with_mc_advantages.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator_with_mc_advantages.py) creates the episodes for VinePPO.
     - [`trainers`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers): Contains trainer classes, with [`ppo_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/) is the main PPO trainer which is shared between PPO and VinePPO.
-    - [`runtime`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime): Integrates components and implements training and evaluation procedures. The [`policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtim) script is the **starting point for running experiments.**
+    - [`runtime`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime): Integrates components and implements training and evaluation procedures. The [`policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime/policy_iteration_runtime.py) script is the **starting point for running experiments.**
   
 ## Citation
 TBD
