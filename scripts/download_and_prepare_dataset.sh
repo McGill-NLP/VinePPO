@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download the zip file
-wget -O wandb_export_root.zip https://github.com/McGill-NLP/vineppo/releases/download/latest/wandb_export_root.zip
+wget -O wandb_export_root.zip https://github.com/McGill-NLP/VinePPO/releases/download/latest/wandb_export_root.zip
 
 # Create the data directory
 mkdir -p data
