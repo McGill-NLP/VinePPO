@@ -1,14 +1,18 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
-- [Paper](#paper)
-- [Abstract](#abstract)
-- [Quick Start](#quick-start)
-  - [Installation](#installation)
-  - [Download the datasets](#download-the-datasets)
-  - [Create Experiment Script](#create-experiment-script)
-  - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
-  - [Running the experiments](#running-the-experiments)
-- [Code Structure](#code-structure)
-- [Citation](#citation)
+- [VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment](#vineppo-unlocking-rl-potential-for-reasoning-through-refined-credit-assignment)
+  - [Paper](#paper)
+  - [Abstract](#abstract)
+  - [Updates](#updates)
+  - [Quick Start](#quick-start)
+    - [Installation](#installation)
+    - [Download the datasets](#download-the-datasets)
+    - [Create Experiment Script](#create-experiment-script)
+    - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
+    - [Running the experiments](#running-the-experiments)
+  - [Code Structure](#code-structure)
+  - [Citation](#citation)
+
+![VinePPO](assets/method_showcase.png)
 
 ## Paper 
 TBD

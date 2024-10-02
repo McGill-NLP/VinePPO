@@ -262,7 +262,6 @@ fabric.properties
 #                                   This Repo                                  #
 # ---------------------------------------------------------------------------- #
 /experiments/
-/assets/
 /wandb/
 /LAUNCHER_DIR/
 
