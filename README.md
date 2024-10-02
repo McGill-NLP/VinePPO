@@ -8,8 +8,9 @@
     - [Download the datasets](#download-the-datasets)
     - [Create Experiment Script](#create-experiment-script)
     - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
-    - [Running the experiments](#running-the-experiments)
+    - [Running the experiments](#running-the-experiments)- 
   - [Code Structure](#code-structure)
+  - [Initial SFT Checkpoints](#initial-sft-checkpoints)
   - [Citation](#citation)
 
 ![VinePPO](assets/method_showcase.png)
@@ -141,6 +142,13 @@ singularity exec --nv \
 	/path/to/singularity/image/treetune_v15.sif \
 	./run.sh
 ```
+## Initial SFT Checkpoints
+
+|Base Model \ SFT Dataset                | GSM8K                                                                                  | MATH                                                                                  |
+|----------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| DeepSeekMath   | [🤗 Deepseekmath-SFT-GSM8K](https://huggingface.co/realtreetune/deepseekmath-7b-sft-GSM8K) | [🤗 Deepseekmath-SFT-MATH](https://huggingface.co/realtreetune/deepseekmath-7b-sft-MATH-v2) |
+| Rho1B          | [🤗 Rhomath-SFT-GSM8K](https://huggingface.co/realtreetune/rho-1b-sft-GSM8K)                 | [🤗 Rhomath-SFT-MATH](https://huggingface.co/realtreetune/rho-1b-sft-MATH)                 |
+
 ## Code Structure
 - [`configs`](https://github.com/McGill-NLP/vineppo/tree/main/configs): Contains Jsonnet files for configuring experiment settings.
 - [`src/treetune`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune): The main directory for source code, encompassing:
