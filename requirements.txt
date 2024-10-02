@@ -7,7 +7,7 @@ https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.5/flash_attn
 deepspeed==0.14.1
 triton==2.1.0
 xformers==0.0.23.post1
-https://github.com/kazemnejad/vllm/releases/download/v0.4.1/vllm-0.4.0.post1-cp310-cp310-linux_x86_64.whl
+https://github.com/McGill-NLP/VinePPO/releases/download/v0.1/vllm-0.4.0.post1-cp310-cp310-linux_x86_64.whl
 accelerate==0.27.2
 transformers==4.38.1
 tokenizers==0.15.2
