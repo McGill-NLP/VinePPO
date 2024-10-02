@@ -10,6 +10,7 @@
   - [Running the experiments](#running-the-experiments)
 - [Code Structure](#code-structure)
 - [Initial SFT Checkpoints](#initial-sft-checkpoints)
+- [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
 
 
@@ -152,6 +153,10 @@ singularity exec --nv \
 |----------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | DeepSeekMath   | [🤗 Deepseekmath-SFT-GSM8K](https://huggingface.co/realtreetune/deepseekmath-7b-sft-GSM8K) | [🤗 Deepseekmath-SFT-MATH](https://huggingface.co/realtreetune/deepseekmath-7b-sft-MATH-v2) |
 | Rho1B          | [🤗 Rhomath-SFT-GSM8K](https://huggingface.co/realtreetune/rho-1b-sft-GSM8K)                 | [🤗 Rhomath-SFT-MATH](https://huggingface.co/realtreetune/rho-1b-sft-MATH)                 |
+
+## Acknowledgement
+
+This is the release codebase for VinePPO. It is developed by [@kazemnejad](https://github.com/kazemnejad) and [@miladink](https://github.com/miladink).
 
 ## Code Structure
 - [`configs`](https://github.com/McGill-NLP/vineppo/tree/main/configs): Contains Jsonnet files for configuring experiment settings.
