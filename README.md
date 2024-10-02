@@ -109,7 +109,7 @@ deepspeed --no_local_rank --num_gpus=$NUM_GPUS   \
 
 This setup was tested on 4x A100 80GB GPUs for Rho models and 8x H100 80GB GPUs for DeepSeek models.
 
-*PS: Refer to [`src/treetune/runtime/policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime/policy_iteration_runtime.py) if you'd like to start reading the codebase.*
+*PS: Refer to [`src/treetune/runtime/policy_iteration_runtime.py`](https://github.com/McGill-NLP/VinePPO/blob/f41ba0380619d588d80d63c4b6c90dbc5c717d1e/src/treetune/runtime/policy_iteration_runtime.py#L162) if you'd like to start reading the codebase.*
 
 ### Single GPU Training (Only for Rho models)
 Add this config `configs/trainers/devBz16.jsonnet` to the `$CONFIGSTR` variable in the script above:
