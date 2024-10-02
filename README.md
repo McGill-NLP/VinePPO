@@ -1,5 +1,5 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
-- [VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment](#vineppo-unlocking-rl-potential-for-reasoning-through-refined-credit-assignment)
+- [VinePPO](#vineppo-unlocking-rl-potential-for-reasoning-through-refined-credit-assignment)
   - [Paper](#paper)
   - [Abstract](#abstract)
   - [Updates](#updates)
