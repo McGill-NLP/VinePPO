@@ -1,17 +1,17 @@
 # VinePPO: Unlocking RL Potential For Reasoning Through Refined Credit Assignment
-- [VinePPO](#vineppo-unlocking-rl-potential-for-reasoning-through-refined-credit-assignment)
-  - [Paper](#paper)
-  - [Abstract](#abstract)
-  - [Updates](#updates)
-  - [Quick Start](#quick-start)
-    - [Installation](#installation)
-    - [Download the datasets](#download-the-datasets)
-    - [Create Experiment Script](#create-experiment-script)
-    - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
-    - [Running the experiments](#running-the-experiments)- 
-  - [Code Structure](#code-structure)
-  - [Initial SFT Checkpoints](#initial-sft-checkpoints)
-  - [Citation](#citation)
+- [Paper](#paper)
+- [Abstract](#abstract)
+- [Updates](#updates)
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [Download the datasets](#download-the-datasets)
+  - [Create Experiment Script](#create-experiment-script)
+  - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
+  - [Running the experiments](#running-the-experiments)
+- [Code Structure](#code-structure)
+- [Initial SFT Checkpoints](#initial-sft-checkpoints)
+- [Citation](#citation)
+
 
 ![VinePPO](assets/method_showcase.png)
 
@@ -27,13 +27,14 @@ TBD
 ## Quick Start
 
 ### Installation
-We provide three ways to install the dependencies for our codebase:
+This project is implemented based torch, Huggingface, FlashAttention, DeepSpeed, and vLLM libraries. To obtain the dependencies, we provide the following three ways:
+
 **1. Using pip**
 ```bash
 # Make sure torch 2.1.2 and cuda 12.1 is installed
 pip install -r requirements.txt
 ```
-**1. Using Docker**
+**2. Using Docker**
 ```bash
 sudo docker run \
   --ipc=host \
@@ -41,7 +42,9 @@ sudo docker run \
   kazemnejad/treetune:v15.1 \
   python -c "import torch; print(torch.__version__)"
 ```
-**1. Using Singularity Container**
+*Optional: You can use the following [Dockerfile](https://github.com/McGill-NLP/VinePPO/blob/main/Dockerfile) to build your own image*
+
+**3. Using Singularity Container**
 ```bash
 singularity pull --arch amd64 library://realtreetune/dev/treetune:v15
 singularity exec --nv treetune_v15.sif python -c "import torch; print(torch.__version__)"
@@ -87,15 +90,14 @@ CONFIGSTR="configs/<config_file>.jsonnet"
 APP_DIRECTORY="experiments/<path_to_output_dir>"
 
 export APP_SEED="2746318213"
-export APP_EXPERIMENT_NAME="seed_${SEED}"
 export WANDB_RUN_ID="<unique_wandb_run_id>" # Optional
 
 NUM_GPUS=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)
 
 # Run the training
 deepspeed --no_local_rank --num_gpus=$NUM_GPUS  \
-		 src/treetune/main.py --configs "$CONFIGSTR" \
-			run_iteration_loop
+         src/treetune/main.py --configs "$CONFIGSTR" \
+            run_iteration_loop
 
 # Run the evaluation
 deepspeed --no_local_rank --num_gpus=$NUM_GPUS   \
@@ -105,6 +107,8 @@ deepspeed --no_local_rank --num_gpus=$NUM_GPUS   \
 ```
 
 This setup was tested on 4x A100 80GB GPUs for Rho models and 8x H100 80GB GPUs for DeepSeek models.
+
+*PS: Refer to [`src/treetune/runtime/policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime/policy_iteration_runtime.py) if you'd like to start reading the codebase.*
 
 ### Single GPU Training (Only for Rho models)
 Add this config `configs/trainers/devBz16.jsonnet` to the `$CONFIGSTR` variable in the script above:
