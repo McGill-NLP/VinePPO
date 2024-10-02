@@ -1,0 +1,3 @@
+{
+    type: "tree_diversity",
+}
