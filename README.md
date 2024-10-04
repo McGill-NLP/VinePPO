@@ -16,7 +16,7 @@
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
 
-Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation (leveraging vLLM as inference engine) of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
+Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation (leveraging vLLM as inference engine*) of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
 
 <p align="center">
     <img src="assets/results.png" width="80%" />
