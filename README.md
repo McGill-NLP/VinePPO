@@ -16,12 +16,12 @@
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
 
-Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
+Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation (leveraging vLLM as inference engine) of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
 
 <p align="center">
     <img src="assets/results.png" width="80%" />
 </p>
-
+*Generating up to 40K tok/sec on 8xH100 GPUs for 7B model
 
 ## Paper 
 [https://arxiv.org/abs/2410.01679](https://arxiv.org/abs/2410.01679)
