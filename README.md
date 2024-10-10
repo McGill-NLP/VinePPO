@@ -2,21 +2,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # VinePPO: Unlocking RL Potential For LLM Reasoning Through Refined Credit Assignment
 > Amirhossein Kazemnejad*, Milad Aghajohari*, Eva Portelance, Alessandro Sordoni, Siva Reddy, Aaron Courville, Nicolas Le Roux
-- [VinePPO: Unlocking RL Potential For LLM Reasoning Through Refined Credit Assignment](#vineppo-unlocking-rl-potential-for-llm-reasoning-through-refined-credit-assignment)
-  - [Paper](#paper)
-  - [Abstract](#abstract)
-  - [Updates](#updates)
-  - [Quick Start](#quick-start)
-    - [Installation](#installation)
-    - [Download the datasets](#download-the-datasets)
-    - [Create Experiment Script](#create-experiment-script)
-    - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
-    - [Running the experiments](#running-the-experiments)
-  - [Initial SFT Checkpoints](#initial-sft-checkpoints)
-  - [Acknowledgement](#acknowledgement)
-  - [Code Structure](#code-structure)
-    - [Important files:](#important-files)
-  - [Citation](#citation)
+- [Paper](#paper)
+- [Abstract](#abstract)
+- [Updates](#updates)
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [Download the datasets](#download-the-datasets)
+  - [Create Experiment Script](#create-experiment-script)
+  - [Single GPU Training (Only for Rho models)](#single-gpu-training-only-for-rho-models)
+  - [Running the experiments](#running-the-experiments)
+- [Initial SFT Checkpoints](#initial-sft-checkpoints)
+- [Acknowledgement](#acknowledgement)
+- [Code Structure](#code-structure)
+  - [Important files](#important-files)
+- [Citation](#citation)
+
 
 Code for reproducing the results in the VinePPO paper. This codebase also provides performant implementation (leveraging vLLM as inference engine*) of popular RL and RL-free baselines (such as PPO, DPO, and RestEM) for LLM reasoning.
 
@@ -178,21 +178,24 @@ This codebase takes pieces from the [guidance](https://github.com/guidance-ai/gu
     - [`runtime`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime): Integrates components and implements training and evaluation procedures. The [`policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime/policy_iteration_runtime.py) script is the **starting point for running experiments.**
 - [`src/guidance`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune): We ship the [guidance](https://github.com/guidance-ai/guidance) module directly with the codebase. 
 
-### Important files:
+### Important files
 Trainers:
 - [`ppo_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/ppo_trainer.py): The main PPO trainer which is shared between PPO and VinePPO.
 - [`dpo_positive_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/dpo_positive_trainer.py): The DPO-Policy trainer.
 - [`restem_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/restem_trainer.py): The RestEM trainer.
+
 Episode Generators:
 - [`math_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator.py): The PPO episode generator.
 - [`math_episode_generator_with_mc_advantages.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator_with_mc_advantages.py): The VinePPO episode generator. This class contains the implementation for Monte Carlo value estimation.
 - [`math_dpo_positive_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_dpo_positive_episode_generator.py): The DPO-Policy episode generator, which generate positive and negative pairs for DPO.
 - [`math_restem_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_restem_episode_generator.py): The RestEM episode generator.
+
 Tasks:
 - [`math.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/tasks/math.py): The main task file for MATH dataset.
 - [`gsm8k.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/tasks/gsm8k.py): The main task file for GSM8K dataset.
 - [`math_grader_minerva.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/tasks/math_grader_minerva.py): The grader for MATH dataset.
 - [`math_extract_steps_inplace`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/tasks/math_extract_steps_inplace.py): The helper script to split MATH-style solutions into steps.
+
 Other:
 - [`policy_iteration_runtime.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/runtime/policy_iteration_runtime.py): The main runtime script for running experiments including training and evaluation.
 - [`vllm_server.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/common/vllm_server.py): The handler class for vLLM inference engine.
