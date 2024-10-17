@@ -181,13 +181,13 @@ This codebase takes pieces from the [guidance](https://github.com/guidance-ai/gu
 ### Important files
 Trainers:
 - [`ppo_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/ppo_trainer.py): The main PPO trainer which is shared between PPO and VinePPO.
-- [`dpo_positive_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/dpo_positive_trainer.py): The DPO-Policy trainer.
+- [`dpo_positive_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/dpo_positive_trainer.py): The DPO-Positive trainer.
 - [`restem_trainer.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/trainers/restem_trainer.py): The RestEM trainer.
 
 Episode Generators:
 - [`math_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator.py): The PPO episode generator.
 - [`math_episode_generator_with_mc_advantages.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_episode_generator_with_mc_advantages.py): The VinePPO episode generator. This class contains the implementation for Monte Carlo value estimation.
-- [`math_dpo_positive_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_dpo_positive_episode_generator.py): The DPO-Policy episode generator, which generate positive and negative pairs for DPO.
+- [`math_dpo_positive_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_dpo_positive_episode_generator.py): The DPO-Positive episode generator, which generate positive and negative pairs for DPO.
 - [`math_restem_episode_generator.py`](https://github.com/McGill-NLP/vineppo/tree/main/src/treetune/episode_generators/math_restem_episode_generator.py): The RestEM episode generator.
 
 Tasks:
