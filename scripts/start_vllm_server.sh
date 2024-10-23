@@ -8,7 +8,7 @@ SWAP_SPACE=$4
 # Read GPU IDX to use. Default is 0
 GPU_IDX=${5:-0}
 
-export VLLM_HF_FOLDER_CACHE_FILE=$HF_HOME/vllm_hf_folder_cache.json
+export VLLM_HF_FOLDER_CACHE_FILE=${HF_HOME:-$(pwd)}/vllm_hf_folder_cache.json
 
 CUDA_VISIBLE_DEVICES=$GPU_IDX python -m vllm.entrypoints.openai.api_server \
 	--model "$MODEL" \
