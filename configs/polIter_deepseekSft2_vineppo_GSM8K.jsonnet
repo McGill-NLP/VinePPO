@@ -3,7 +3,7 @@ local task = (import 'tasks/gsm8k_orig_format.jsonnet');
 local total_num_iterations = 650;
 
 
-(import 'polIter_deepseekSft2_vineppo_MATH.jsonnet.jsonnet')
+(import 'polIter_deepseekSft2_vineppo_MATH.jsonnet')
 + {
     episode_generator+: {
         // Override the task
