@@ -61,8 +61,8 @@ singularity exec --nv treetune_v15.sif python -c "import torch; print(torch.__ve
 ```
 ### Download the datasets
 ```bash
-chmod a+x scripts/download_and_prepare_datasets.sh
-./scripts/download_and_prepare_datasets.sh
+chmod a+x scripts/download_and_prepare_dataset.sh
+./scripts/download_and_prepare_dataset.sh
 ```
 
 ### Create Experiment Script
