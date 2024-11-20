@@ -160,7 +160,7 @@ class PolicyIterationRuntime(DistributedRuntime):
             logger.info(f"Finished iteration {iteration}")
 
     def run_iteration_loop(self, force_rerun: bool = False):
-        # Check if final checkpoint exists
+        # Check if final checkpoint exists 存在就直接不用训练了
         final_checkpoint = self.exp_root / "checkpoints" / "final"
         if final_checkpoint.exists() and not force_rerun:
             logger.info("Final checkpoint already exists. Skipping iteration loop.")
@@ -171,7 +171,7 @@ class PolicyIterationRuntime(DistributedRuntime):
         self._init_policy_iteration()
         self._cloud_log({"timing/total/init_policy_iteration": time.time() - t0})
 
-        # noinspection PyTypeChecker
+        # noinspection PyTypeChecker 检查类型
         trainer: Union[PolicyTrainer, DeepSpeedPolicyTrainer] = self.trainer
         if isinstance(self.episode_generator, EpisodeGenerator):
             self.episode_generator.set_trainer(weakref.ref(trainer))
@@ -191,7 +191,7 @@ class PolicyIterationRuntime(DistributedRuntime):
                 self.tokenizer.save_pretrained(latest_policy_path)
             if is_local_main_process:
                 logger.info(f"**** Resuming from iteration {starting_iteration} ****")
-
+        # 从保存的checkpoint开始训练
         for iteration in range(starting_iteration, self.num_iterations):
             if (
                 self.early_stop_iteration is not None
@@ -208,6 +208,7 @@ class PolicyIterationRuntime(DistributedRuntime):
                 logger.info("*" * 80)
 
             t0 = time.time()
+            # 生成episode数据
             episodes = self._generate_episodes(
                 iteration,
                 latest_policy_path=latest_policy_path,
@@ -223,6 +224,7 @@ class PolicyIterationRuntime(DistributedRuntime):
             self.distributed_state.wait_for_everyone()
 
             t0 = time.time()
+            # 训练
             latest_policy_path = trainer.step(episodes)
             self._cloud_log({"timing/total/training_step": time.time() - t0})
 
